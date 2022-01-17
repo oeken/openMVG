@@ -17,7 +17,7 @@
 #include <numeric>
 
 #include <cstdint>
-#include <immintrin.h>
+// #include <immintrin.h>
 
 namespace openMVG {
 namespace matching {
