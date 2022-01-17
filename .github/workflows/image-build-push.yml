@@ -1,0 +1,21 @@
+name: Build and push docker image
+
+on:
+  push:
+    branches: [ v2.0-amd64 ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Docker login
+      uses: docker/login-action@v1
+      with:
+        username: oeken
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    - name: Build image
+      run: docker build -t oeken/openmvg:2.0-ubuntu-amd64 .
+    - name: Push image
+      run: docker push oeken/openmvg:2.0-ubuntu-amd64
