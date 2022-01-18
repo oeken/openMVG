@@ -16,6 +16,6 @@ jobs:
         username: oeken
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     - name: Build image
-      run: docker build -t oeken/openmvg:2.0-ubuntu-amd64 .
+      run: docker build -t oeken/openmvg:2.0 .
     - name: Push image
-      run: docker push oeken/openmvg:2.0-ubuntu-amd64
+      run: docker push oeken/openmvg:2.0
