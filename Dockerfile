@@ -39,7 +39,6 @@ RUN mkdir /opt/openMVG_Build; \
     -DCOINUTILS_INCLUDE_DIR_HINTS=/usr/include \
     -DCLP_INCLUDE_DIR_HINTS=/usr/include \
     -DOSI_INCLUDE_DIR_HINTS=/usr/include \
-    ../openMVG/src \
-    -j$(nproc);
+    ../openMVG/src;
 
-RUN cd /opt/openMVG_Build && make install
+RUN cd /opt/openMVG_Build && make -j$(nproc) && make install
